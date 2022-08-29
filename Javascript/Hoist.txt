@@ -1,0 +1,41 @@
+1 Assignment
+undefined
+
+
+
+2 Assignment
+'magnet'
+
+
+
+// 3 Assignment
+'super cool'
+'super cool'
+
+
+// 4 Assignment
+'chicken'
+'half-chicken'
+
+
+// 5 Assignment
+//error
+
+
+// 6 Assignment
+undefined
+"rock"
+"r&b"
+"disco"
+
+
+// 7 Assignment
+"san jose"
+"seattle"
+"burbank"
+"san jose"
+
+
+// 8 - Bonus ES6: const Assignment
+{"Chicago", 65, true}
+//error
