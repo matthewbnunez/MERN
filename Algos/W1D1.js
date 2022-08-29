@@ -34,8 +34,8 @@ function bubbleSort(nums = []) {
                 nums[j] = temp
             }
         }
-        return nums;
     }
+    return nums;
 }
     // make sure you run the code in Shell, not console
 
