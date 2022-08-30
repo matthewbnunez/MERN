@@ -42,8 +42,6 @@ function selectionSort(nums = []) {
 }
 
 
-
-
 console.log(selectionSort(numsOrdered));
 console.log(selectionSort(numsRandomOrder));
 console.log(selectionSort(numsReversed));
