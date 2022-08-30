@@ -24,7 +24,7 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @returns {Array<number>} The given nums after being sorted.
  */
 function selectionSort(nums = []) {
-    for (let i = 0; i < nums.length; i++){
+    for (let i = 0; i < nums.length - 1; i++){
         let min = i;
         for (let j = i + 1; j < nums.length; j++){
             if (nums[j] < nums[min]){
