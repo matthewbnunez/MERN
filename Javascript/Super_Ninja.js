@@ -21,6 +21,8 @@ class Ninja{
         return this
     }
 }
+
+
 class Sensei extends Ninja{
     constructor(name){
         super(name, 200, 10, 10);
