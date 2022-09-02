@@ -38,32 +38,32 @@ const UserForm = (props) => {
                     <label>First name: </label>
                     <input type="text" name="firstName" onChange={(e) => setFirstName(e.target.value)} />
                     {
-                        firstName.length == 0 || firstName.length < 2 &&
-                        <span style={{ color: "red"}}> First name must be at least 2 characters</span>
+                        firstName.length === 0 || (firstName.length < 2 &&
+                        <span style={{ color: "red"}}> First name must be at least 2 characters</span>)
                     }
                 </div>
                 <div>
                     <label>Last name: </label>
                     <input type="text" name="lastName" onChange={(e) => setLastName(e.target.value)} />
                     {
-                        lastName.length == 0 || lastName.length < 2 &&
-                        <span style={{ color: "red"}}> Last name must be at least 2 characters</span>
+                        lastName.length === 0 || (lastName.length < 2 &&
+                        <span style={{ color: "red"}}> Last name must be at least 2 characters</span>)
                     }
                 </div>
                 <div>
                     <label>Email Address: </label>
                     <input type="text" name="email" onChange={(e) => setEmail(e.target.value)} />
                     {
-                        email.length == 0 || email.length < 5 &&
-                        <span style={{ color: "red"}}> Email must be at least 5 characters</span>
+                        email.length === 0 || (email.length < 5 &&
+                        <span style={{ color: "red"}}> Email must be at least 5 characters</span>)
                     }
                 </div>
                 <div>
                     <label>Password: </label>
                     <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
                     {
-                        password.length == 0 || password.length < 8 &&
-                        <span style={{ color: "red"}}> Password must be at least 8 characters</span>
+                        password.length === 0 || (password.length < 8 &&
+                        <span style={{ color: "red"}}> Password must be at least 8 characters</span>)
                     }
                 </div>
                 <div>
