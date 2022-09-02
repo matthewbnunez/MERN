@@ -38,7 +38,7 @@ const UserForm = (props) => {
                     <label>First name: </label>
                     <input type="text" name="firstName" onChange={(e) => setFirstName(e.target.value)} />
                     {
-                        firstName.length < 2 &&
+                        firstName.length == 0 || firstName.length < 2 &&
                         <span style={{ color: "red"}}> First name must be at least 2 characters</span>
                     }
                 </div>
@@ -46,7 +46,7 @@ const UserForm = (props) => {
                     <label>Last name: </label>
                     <input type="text" name="lastName" onChange={(e) => setLastName(e.target.value)} />
                     {
-                        lastName.length < 2 &&
+                        lastName.length == 0 || lastName.length < 2 &&
                         <span style={{ color: "red"}}> Last name must be at least 2 characters</span>
                     }
                 </div>
@@ -54,7 +54,7 @@ const UserForm = (props) => {
                     <label>Email Address: </label>
                     <input type="text" name="email" onChange={(e) => setEmail(e.target.value)} />
                     {
-                        email.length < 5 &&
+                        email.length == 0 || email.length < 5 &&
                         <span style={{ color: "red"}}> Email must be at least 5 characters</span>
                     }
                 </div>
@@ -62,7 +62,7 @@ const UserForm = (props) => {
                     <label>Password: </label>
                     <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
                     {
-                        password.length < 8 &&
+                        password.length == 0 || password.length < 8 &&
                         <span style={{ color: "red"}}> Password must be at least 8 characters</span>
                     }
                 </div>
