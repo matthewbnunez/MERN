@@ -13,9 +13,13 @@ const UserForm = (props) => {
 
     const createUser = (e) => {
         e.preventDefault();
-        const newUser = { firstName, lastName, email, password, confirmPassword };
-        console.log("Welcome", newUser);
-        setHasBeenSubmitted(true);
+        if(firstName.length > 2 && lastName.length > 2 && email.length < 5 && password.length < 8 && password !== confirmPassword){
+            const newUser = { firstName, lastName, email, password, confirmPassword };
+            console.log("Welcome", newUser);
+            setHasBeenSubmitted(true);
+        } else{
+            alert("Invaild Form")
+        }
     };
 
     const formMessage = () => {
