@@ -26,18 +26,27 @@ const expectedMerge4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  *    both given halves.
  */
 function merge(left = [], right = []) {
-    newArr = []
-    for(let i = 0; i < left.length; i++){
-        for(let j = 0 ; j < right.length; j++){
-            if (left[i] < right[j]) {
-                newArr.push(left[i])
-            }
-            else if(left[i] > right[j]) {
-                newArr.push(right[j])
-            }
+    let newArr = []
+    let length = 0
+    //determining the longer array
+    if (left.length > right.length) {
+        length = left.length
+    }
+    else {
+        length = right.length
+    }
+
+    for (let i = 0; i < length; i++) {
+        let j = 0
+        if (left[i] < right[j]) {
+            newArr.push(left[i])
+        }
+        if (left[i] > right[j]) {
+            newArr.push(right[j])
+            j++
         }
     }
-    return newArr
+    return [...newArr, ...left, ...right]
 }
 
 console.log(merge(sortedA1, sortedB1));
