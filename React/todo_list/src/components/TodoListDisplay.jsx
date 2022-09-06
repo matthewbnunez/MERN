@@ -18,12 +18,11 @@ const TodoListDisplay = (props) => {
             {
                 props.TodoList.map((eachTodo, i) => {
                     return (
-                        <p>
-                            {eachTodo.todo}
-                            {eachTodo.todoCompleted}
+                        <div style={{display: "flex", justifyContent: "center"}}>
+                            <p style={eachTodo.todoCompleted? {textDecoration: "line-through"}:{textDecoration:"none"}}>{eachTodo.todo}</p>
                             <input type="checkbox" checked={eachTodo.todoCompleted} onChange={(e) => handleUpdate(e, i)} />
                             <button onClick={()=>handleDelete(i)}> Delete</button>
-                        </p>
+                        </div>
                     )
                 })
             }
