@@ -13,7 +13,7 @@ const UserForm = (props) => {
 
     const createUser = (e) => {
         e.preventDefault();
-        if(firstName.length > 2 && lastName.length > 2 && email.length < 5 && password.length < 8 && password !== confirmPassword){
+        if(firstName.length >= 2 && lastName.length >= 2 && email.length >= 5 && password.length >= 8 && password === confirmPassword){
             const newUser = { firstName, lastName, email, password, confirmPassword };
             console.log("Welcome", newUser);
             setHasBeenSubmitted(true);
