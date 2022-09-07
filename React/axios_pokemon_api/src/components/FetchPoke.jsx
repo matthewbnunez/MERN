@@ -1,27 +1,22 @@
 import React, {useState} from 'react'
 import DisplayPoke from './DisplayPoke'
-import axios from 'axios'
 
 const FetchPoke = () => {
-    const [pokemon, setPokemon] = useState()
+    const [pokemonName, setPokemonName] = useState("pikachu")
+    const [confirmedName, setConfirmedName] = useState("pikachu")
 
-    const fetchPokemon = () => {
-        axios.get("https://pokeapi.co/api/v2/pokemon/ditto")
-        .then(response => {
-            setPokemon(response.data)
-        })
-        .catch()
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        setConfirmedName(pokemonName)
     }
-
     return (
         <div>
-            <h1>Fetch Pokemon</h1>
-            <button onClick={fetchPokemon}>Fetch Pokemon</button>
-            {
-                pokemon?
-                <DisplayPoke pokemon = {pokemon}/>:
-                <h1>Fetch a Pokemon</h1>
-            }
+            <h1>Pokemon challenge </h1>
+            <form onSubmit = {handleSubmit}>
+                <input type="text" onChange={(e) => setPokemonName(e.target.value)} />
+                <button type="submit">Search</button>
+            </form>
+            <DisplayPoke submittedName={confirmedName} />
         </div>
     )
 }
