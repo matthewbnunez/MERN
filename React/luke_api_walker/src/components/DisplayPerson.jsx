@@ -23,7 +23,7 @@ const DisplayPerson = () => {
                         <p><b>Hair color: </b>{people.hair_color}</p>
                         <p><b>Skin color: </b>{people.skin_color}</p>
                     </div> :
-                    <h1>these are not the droids you're looking for</h1>
+                    <h1>These are not the droids you're looking for</h1>
             }
         </div>
     )
