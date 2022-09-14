@@ -1,10 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-    
+import Table from 'react-bootstrap/Table';
+
+
 const PersonList = (props) => {
     const { removeFromDom } = props;
-    
+
     const deletePerson = (personId) => {
         axios.delete('http://localhost:8000/api/people/' + personId)
             .then(res => {
@@ -12,26 +14,38 @@ const PersonList = (props) => {
             })
             .catch(err => console.error(err));
     }
-    
+
     return (
         <div>
-            {props.people.map((person, idx) => {
-                return <p key={idx}>
-                    <Link to={"/api/people/" + person._id}>
-                        {person.lastName}, {person.firstName}
-                    </Link>
-                    |
-                    <Link to={"/api/people/" + person._id + "/edit"}>Edit</Link>
-                    |
-                    <button onClick={(e)=>{deletePerson(person._id)}}>
-                        Delete
-                    </button>
-                </p>
-            })}
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>Author</th>
+                        <th>Action available</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {props.people.map((person, idx) => {
+                        return <tr key={idx}>
+                            <td>
+                                {person.lastName}, {person.firstName}
+                            </td>
+                            <td>
+                                <Link to={"/api/people/" + person._id + "/edit"}>Edit</Link>
+                            </td>
+                            <td>
+                                <button onClick={(e) => { deletePerson(person._id) }}>
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    })}
+                </tbody>
+            </Table>
         </div>
     )
 }
-    
+
 export default PersonList;
 
 

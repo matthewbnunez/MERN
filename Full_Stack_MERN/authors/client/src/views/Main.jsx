@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import PersonForm from '../components/PersonForm';
 import PersonList from '../components/PersonList';
+import { Link } from 'react-router-dom';
+
 
 
 const Main = (props) => {
@@ -23,8 +24,9 @@ const Main = (props) => {
 
     return (
         <div>
-            <PersonForm />
-            <hr />
+            <h1>Favorite authors</h1>
+            <Link to={"/api/people"} >Add an author:</Link>
+            <h4>We have quotes by:</h4>
             {loaded && <PersonList people={people} removeFromDom={removeFromDom} />}
         </div>
     );

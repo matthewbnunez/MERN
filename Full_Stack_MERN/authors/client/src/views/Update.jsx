@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
     
 const Update = (props) => {
     const { id } = useParams();
@@ -27,7 +27,9 @@ const Update = (props) => {
     
     return (
         <div>
-            <h1>Update a Person</h1>
+            <h1>Favorite authors</h1>
+            <Link to={"/"}>Home</Link>
+            <h4>Edit this Author:</h4>
             <form onSubmit={updatePerson}>
                 <p>
                     <label>First Name</label><br />
