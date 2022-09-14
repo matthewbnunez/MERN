@@ -66,3 +66,16 @@ module.exports = function(app){
 
 Now, we have a route that ends in 'api' and will simply return an object with a message equal to "Hello World". Let's link to this in our server.js:
 
+## *server.js*
+
+```javascript
+const express = require('express');
+const app = express();
+require('./server/routes/person.routes')(app); // This is new
+app.listen(8000, () => {
+    console.log("Listening at Port 8000")
+})
+```
+
+Now, when we visit 'localhost:8000/api', we will get a JSON response of **{message: "Hello World"}**.
+We have our back end set up, but let's display this in our front end.
