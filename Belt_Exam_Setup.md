@@ -43,5 +43,26 @@ npx create-react-app client
 
 Let's add a controller within the 'controllers' folder, called **person.controller.js**.
 
-# controllers/person.controller.js
+### *controllers/person.controller.js*
+
+```javascript
+module.exports.index = (request, response) => {
+    response.json({
+       message: "Hello World"
+    });
+}
+```
+
+Next, in the routes folder, let's create the **person.routes.js** file.
+
+### *routes/person.routes.js*
+
+```javascript
+const PersonController = require('../controllers/person.controller');
+module.exports = function(app){
+    app.get('/api', PersonController.index);
+}
+```
+
+Now, we have a route that ends in 'api' and will simply return an object with a message equal to "Hello World". Let's link to this in our server.js:
 
