@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
     
 const Update = (props) => {
+    const navigate = useNavigate()
     const { id } = useParams();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -21,7 +22,7 @@ const Update = (props) => {
             firstName,
             lastName
         })
-            .then(res => console.log(res))
+            .then(res => navigate("/"))
             .catch(err => console.error(err));
     }
     
