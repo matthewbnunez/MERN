@@ -16,7 +16,7 @@ const Main = (props) => {
                 setLoaded(true);
             })
             .catch(err => console.error(err));
-    }, [people]);
+    }, []);
 
     const removeFromDom = personId => {
         setPeople(people.filter(person => person._id !== personId));
@@ -25,7 +25,7 @@ const Main = (props) => {
     return (
         <div class="m-5">
             <h1 class="mb-3">Favorite authors</h1>
-            <Link className="btn btn-primary mb-3" to={"/api/people"} >Add an author:</Link>
+            <Link className="btn btn-primary mb-3" to={"/people"} >Add an author:</Link>
             <h4 class="mb-3">We have quotes by:</h4>
             {loaded && <PersonList people={people} removeFromDom={removeFromDom} />}
         </div>

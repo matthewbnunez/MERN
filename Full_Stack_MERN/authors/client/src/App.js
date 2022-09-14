@@ -10,8 +10,8 @@ function App() {
         <div className="App">
             <Routes>
                 <Route element={<Main />} path="/" />
-                <Route element={<PersonForm />} path="/api/people" />
-                <Route element={<Update/>} path="/api/people/:id/edit"/>
+                <Route element={<PersonForm />} path="/people" />
+                <Route element={<Update/>} path="/people/:id/edit"/>
             </Routes>
         </div>
     );
