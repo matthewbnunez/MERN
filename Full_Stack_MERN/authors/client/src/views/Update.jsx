@@ -14,7 +14,7 @@ const Update = (props) => {
                 setFirstName(res.data.firstName);
                 setLastName(res.data.lastName);
             })
-    }, []);
+    }, [id]);
     
     const updatePerson = e => {
         e.preventDefault();
