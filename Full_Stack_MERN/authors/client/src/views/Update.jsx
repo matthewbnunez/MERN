@@ -9,16 +9,16 @@ const Update = (props) => {
     const [lastName, setLastName] = useState('');
     
     useEffect(() => {
-        axios.get('http://localhost:8000/api/people/' + id)
+        axios.get(`http://localhost:8000/api/people/${id}`)
             .then(res => {
                 setFirstName(res.data.firstName);
                 setLastName(res.data.lastName);
             })
-    }, [id]);
+    }, []);
     
     const updatePerson = e => {
         e.preventDefault();
-        axios.put('http://localhost:8000/api/people/' + id, {
+        axios.put(`http://localhost:8000/api/people/${id}`, {
             firstName,
             lastName
         })
