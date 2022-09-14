@@ -79,3 +79,11 @@ app.listen(8000, () => {
 
 Now, when we visit 'localhost:8000/api', we will get a JSON response of **{message: "Hello World"}**.
 We have our back end set up, but let's display this in our front end.
+
+____________________________________________________________________________________________________
+
+Let's now start setting up our React project. Change directories into your React project, called **client**, and run the following:
+
+```bash
+npm install axios
+```
