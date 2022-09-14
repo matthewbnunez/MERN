@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import PersonForm from '../components/PersonForm';
 import PersonList from '../components/PersonList';
-import { Link } from 'react-router-dom';
 
 
 const Main = (props) => {
