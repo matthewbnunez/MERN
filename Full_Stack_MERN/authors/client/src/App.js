@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Main from './views/Main';
 import PersonForm from './views/PersonForm';
 import Update from './views/Update';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     return (

@@ -26,11 +26,11 @@ const Update = (props) => {
     }
     
     return (
-        <div>
-            <h1>Favorite authors</h1>
-            <Link to={"/"}>Home</Link>
-            <h4>Edit this Author:</h4>
-            <form onSubmit={updatePerson}>
+        <div class="m-5">
+            <h1 class="mb-3">Favorite authors</h1>
+            <Link className="btn btn-primary mb-3" to={"/"}>Home</Link>
+            <h4 class="mb-3">Edit this Author:</h4>
+            <form class="mb-3" onSubmit={updatePerson}>
                 <p>
                     <label>First Name</label><br />
                     <input type="text" 
@@ -45,7 +45,7 @@ const Update = (props) => {
                     value={lastName} 
                     onChange={(e) => { setLastName(e.target.value) }} />
                 </p>
-                <input type="submit" />
+                <input className="btn btn-success" type="submit" />
             </form>
         </div>
     )

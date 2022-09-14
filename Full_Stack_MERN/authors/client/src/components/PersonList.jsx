@@ -21,7 +21,7 @@ const PersonList = (props) => {
                 <thead>
                     <tr>
                         <th>Author</th>
-                        <th>Action available</th>
+                        <th colspan="2">Action available</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,10 +31,10 @@ const PersonList = (props) => {
                                 {person.lastName}, {person.firstName}
                             </td>
                             <td>
-                                <Link to={"/api/people/" + person._id + "/edit"}>Edit</Link>
+                                <Link className="btn btn-warning" to={"/api/people/" + person._id + "/edit"}>Edit</Link>
                             </td>
                             <td>
-                                <button onClick={(e) => { deletePerson(person._id) }}>
+                                <button class="btn btn-danger"onClick={(e) => { deletePerson(person._id) }}>
                                     Delete
                                 </button>
                             </td>

@@ -16,11 +16,11 @@ const PersonForm = (props) => {
             .catch(err => console.log(err))
     }
     return (
-        <div>
-            <h1>Favorite authors</h1>
-            <Link to={"/"}>Home</Link>
-            <h4>Add a new Author:</h4>
-            <form onSubmit={onSubmitHandler}>
+        <div class="m-5">
+            <h1 class="mb-3">Favorite authors</h1>
+            <Link className="btn btn-primary mb-3" to={"/"}>Home</Link>
+            <h4 class="mb-3">Add a new Author:</h4>
+            <form class="mb-3" onSubmit={onSubmitHandler}>
                 <p>
                     <label>First Name</label><br />
                     <input type="text" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
@@ -29,7 +29,7 @@ const PersonForm = (props) => {
                     <label>Last Name</label><br />
                     <input type="text" onChange={(e) => setLastName(e.target.value)} value={lastName} />
                 </p>
-                <input type="submit" />
+                <input className="btn btn-primary" type="submit" />
             </form>
         </div>
     )
